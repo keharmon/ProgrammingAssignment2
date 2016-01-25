@@ -1,15 +1,17 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The first function stores a list of functions
+## The second function calculates the inverse of a matrix but sees if it is stored
+## before proceeding to calculate the inverse and store it.
 
 
-## Write a short comment describing this function
+## Makes "special" object storing a list of 4 functions (e.g., set, get) to set and get matrix value
+## and set and get inverse value
 makeCacheMatrix <- function(x = matrix()) {
         i <- NULL
         set <- function(y) {
                 x <<- y
                 i <<- NULL
         }
-        get <- function() x
+        get <- function() x 
         setinverse <- function(solve) i <<- solve
         getinverse <- function() i
         list(set = set, get = get,
@@ -17,7 +19,8 @@ makeCacheMatrix <- function(x = matrix()) {
              getinverse = getinverse)
 }
 
-## Write a short comment describing this function
+## If i (for inverse) exists in memory, the function tells you it is getting the value and returns it
+## If i is null, data is assigned the matrix created in first function, inverse is taken and stored
 cacheSolve <- function(x, ...) {
         ##Return a matrix that is the inverse of 'x'
         i <- x$getinverse()
