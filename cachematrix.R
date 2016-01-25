@@ -33,3 +33,18 @@ cacheSolve <- function(x, ...) {
         x$setinverse(i)
         i
 }
+
+##trying it out
+m.matrix <- makeCacheMatrix(matrix(5:8, 2, 2)) #creating my matrix
+
+m.matrix$get() #returns my matrix
+
+m.matrix$getinverse() #doesn't exist yet
+
+cacheSolve(m.matrix) #returns inverse for my matrix
+
+m.matrix$getinverse() #this is stored now so returns inverse for my matrix
+
+
+
+
